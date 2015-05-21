@@ -1,0 +1,34 @@
+table {
+	border-spacing: 0;
+	border: 1px solid green;
+	border-radius:2px;
+	margin:0 auto;
+}
+td {
+	width: 15px;
+	height: 15px;
+}
+.cell{
+	background-color:#fff;
+}
+.tail{
+	background: url(../css/snake_skin.jpg);
+		background-size: 100%;
+		background-position: center;
+}
+.apple {
+	background-image: url(../css/mushroom.png);
+	background-size: 100%;
+	background-position: center;
+}
+input{
+	display:block;
+	margin: 10px auto;
+}
+#score {
+	width:50px;
+	text-align:center;
+	margin: 0 auto;
+	color: green;
+	font-size:30px;
+}
