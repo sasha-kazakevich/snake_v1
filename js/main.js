@@ -125,6 +125,7 @@
 		if (nextDir === "over"){
 			clearInterval(k);
 			alert("Game Over! you score : " + score);
+			if (score > bestScore) window.localStorage.setItem("snake_score",score);
 		}
 		if(!end){
 			snakeParts[1].futureCoord = this.coord;
@@ -211,9 +212,13 @@
 			k = setInterval(turn,speed);
 		}
 	}
-    var snakeParts,apple,k,score,speed;
+    var snakeParts,apple,k,score,bestScore,speed;
 
 	var sc = document.getElementById("score");
+	var bestsc = document.getElementById("bestscore");
+
+	if (!window.localStorage.getItem("snake_score"))
+	window.localStorage.setItem("snake_score","0");
 
 	document.getElementById('start').addEventListener('click', function(){
 		world.forEach(function(pow){
@@ -226,7 +231,9 @@
 		 apple.be(0,snakeParts);
 		 speed = 1600;
 		 score = 0;
+		 bestScore = +window.localStorage.getItem("snake_score");
 		 sc.innerHTML = score;
+		 bestsc.innerHTML = "best score: " + bestScore;
 		 k = setInterval(turn, speed);
 	},false);
 

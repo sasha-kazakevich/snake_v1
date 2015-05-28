@@ -25,6 +25,9 @@ input{
 	display:block;
 	margin: 10px auto;
 }
+#bestscore{
+	margin-left:40%;
+}
 #score {
 	width:50px;
 	text-align:center;
